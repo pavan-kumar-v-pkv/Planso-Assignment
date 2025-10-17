@@ -9,13 +9,14 @@
 <body>
     <h1>Water Tank Problem Visualizer</h1>
     <div class="input-section">
-        <input class="heights-input" type="text" placeholder="e.g. 0,4,0,0,0,6,0,6,4,0">
+        <input id="heights-input" type="text" placeholder="e.g. 0,4,0,0,0,6,0,6,4,0">
         <button onclick="solveAndVisualize()">Solve</button>
     </div>
 
     <div id="output-water">
         <!-- Visualization will be rendered here -->
     </div>
+    <svg id="visualization" width="800" height="500"></svg>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,51 @@
+* {
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background: #DBDDDF;
+}
+
+.input-section {
+  margin: 20px;
+}
+
+#visualization {
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-top: 20px;
+}
+
+.bar {
+    fill: #333;
+}
+
+.water {
+    fill: #4fc3f7;
+    opacity: 0.6;
+}
+
+#output-water {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.axis {
+    stroke: #000;
+    stroke-width: 2;
+}
+
+.grid-line {
+    stroke: #ccc;
+    stroke-dasharray: 2,2;
+    stroke-width: 1;
+}
+
+.y-label, .x-label {
+    font-size: 14px;
+    fill: #333;
+}
