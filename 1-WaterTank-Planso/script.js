@@ -83,6 +83,7 @@ function visualize(heights, waterLevels){
         svg.appendChild(label);
     }
 
+
     // X-axis
     const xAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
     xAxis.setAttribute("x1", xOffset);
@@ -92,6 +93,15 @@ function visualize(heights, waterLevels){
     xAxis.classList.add("axis");
     svg.appendChild(xAxis);
 
+    // X-axis label
+    const xLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    xLabel.setAttribute("x", xOffset + heights.length * barWidth / 2);
+    xLabel.setAttribute("y", yBase + 45);
+    xLabel.setAttribute("text-anchor", "middle");
+    xLabel.setAttribute("class", "axis-label");
+    xLabel.textContent = "Index";
+    svg.appendChild(xLabel);
+
     // Y-axis
     const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
     yAxis.setAttribute('x1', xOffset);
@@ -100,6 +110,16 @@ function visualize(heights, waterLevels){
     yAxis.setAttribute('y2', yBase - maxHeight * scale - 20);
     yAxis.classList.add("axis");
     svg.appendChild(yAxis);
+
+    // Y-axis label
+    const yLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    yLabel.setAttribute("x", xOffset - 40);
+    yLabel.setAttribute("y", yBase - maxHeight * scale / 2);
+    yLabel.setAttribute("text-anchor", "middle");
+    yLabel.setAttribute("class", "axis-label");
+    yLabel.setAttribute("transform", `rotate(-90, ${xOffset - 40}, ${yBase - maxHeight * scale / 2})`);
+    yLabel.textContent = "Height";
+    svg.appendChild(yLabel);
 
     for(let i=0;i<heights.length;i++){
         const x = xOffset + i * barWidth;
